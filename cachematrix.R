@@ -28,7 +28,7 @@ cacheSolve <- function(x, ...) {
                 message("No matrix to invert")
         }
         # Giving message if matrix is present but not square
-        else if(!(dim(x$getCache())[1]==dim(x$getCache())[2])){
+        else if(dim(x$getCache())[1]!=dim(x$getCache()[2])){
                 message("Matrix must be square")        
         }
         # Inverting matrix and giving message
