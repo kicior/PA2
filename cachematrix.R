@@ -25,15 +25,13 @@ makeCacheMatrix <- function(x = matrix()) {
 ### the inverse from the cache.
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
-        # Assigning cached (or not) matrix to flag y makes possible to do
-        # different things depending of its presence or absence
         inv <- x$getInv()
         # Giving message if inverted matrix is cached
         if(!is.null(inv)){
                 message("Getting cached matrix")
                 return(inv)
         }
-        message("Inverted matrix is:")
+        message("Inverting matrix")
         data <- x$get()
         inv <- solve(data)
         x$setInv(inv)
